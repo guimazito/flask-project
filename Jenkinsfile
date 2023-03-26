@@ -5,7 +5,7 @@ pipeline {
       steps{
         // script {
             // dockerImage = docker.build('flask-project')
-        sh 'docker build -t flask-project .'
+        powershell 'docker build -t flask-project .'
         // }
       }
     }
@@ -13,7 +13,7 @@ pipeline {
       steps{
         //  script {
             // dockerImage.push('flask-project')
-        sh 'docker run --name flask-project -d -p 5000:5000 flask-project'
+        powershell 'docker run --name flask-project -d -p 5000:5000 flask-project'
         //   }
         }
       }
