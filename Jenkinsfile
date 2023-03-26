@@ -4,14 +4,16 @@ pipeline {
        stage('Building image') {    
       steps{
         script {
-            sh 'docker build -t flask-project .'
+            dockerImage = docker.build 'flask-project'
+            // sh 'docker build -t flask-project .'
         }
       }
     }
        stage('Deploy Image') {
       steps{
          script {
-            sh 'docker run --name flask-project -d -p 5000:5000 flask-project'
+            dockerImage.push("$BUILD_NUMBER")
+            // sh 'docker run --name flask-project -d -p 5000:5000 flask-project'
           }
         }
       }
