@@ -23,7 +23,7 @@ pipeline {
     }
     stage('Deploying New Container') {
       steps {
-        powershell 'docker run --name flask-project -d -p 5000 flask-project'
+        powershell 'docker run --name flask-project -d -p 5000:5000 flask-project'
       }
     }
   }
