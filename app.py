@@ -1,11 +1,12 @@
 import time
 import random
-from waitress import serve
+# from waitress import serve
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-@app.route('/search_ad')
+# @app.route('/search_ad')
+@app.route('/')
 def index():
     code = ''
     title = ''
@@ -14,7 +15,8 @@ def index():
     total = ''
     return render_template('index.html', code=code, title=title, category=category, price= price, total=total)
 
-@app.route('/search_ad', methods=['POST'])
+# @app.route('/search_ad', methods=['POST'])
+@app.route('/', methods=['POST'])
 def search():
     # Getting product name from form
     product_name = request.form['text']
@@ -39,6 +41,6 @@ def search():
         total = random.randint(5, 10)
     return render_template('index.html', code=code, title=title, category=category, price= price, total=total)
 
-if __name__ == '__main__':
-    app.run()
-    #serve(app, host='0.0.0.0', port=80)
+# if __name__ == '__main__':
+#     app.run()
+#     #serve(app, host='0.0.0.0', port=80)
