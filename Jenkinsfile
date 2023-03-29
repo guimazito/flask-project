@@ -11,9 +11,14 @@ pipeline {
         powershell 'docker rm flask-project'
       }
     }
-    stage('Installing Python 3.8') {
+    // stage('Installing Python 3.8') {
+    //   steps {        
+    //     powershell 'docker pull python:3.8'
+    //   }
+    // }
+    stage('Installing Windows') {
       steps {        
-        powershell 'docker pull python:3.8'
+        powershell 'docker pull mcr.microsoft.com/windows/nanoserver:ltsc2022'
       }
     }
     stage('Installing pywin32') {
