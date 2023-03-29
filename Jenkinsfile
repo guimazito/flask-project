@@ -1,21 +1,21 @@
 pipeline {
   agent any
   stages {
-    stage('Stopping Docker Container') {
-      steps {
-        powershell 'docker stop flask-project'
-      }
-    }
-    stage('Removing Docker Container') {
-      steps {
-        powershell 'docker rm flask-project'
-      }
-    }
-    stage('Removing Docker Image') {
-      steps {
-        powershell 'docker rmi flask-project'
-      }
-    }
+    // stage('Stopping Docker Container') {
+    //   steps {
+    //     powershell 'docker stop flask-project'
+    //   }
+    // }
+    // stage('Removing Docker Container') {
+    //   steps {
+    //     powershell 'docker rm flask-project'
+    //   }
+    // }
+    // stage('Removing Docker Image') {
+    //   steps {
+    //     powershell 'docker rmi flask-project'
+    //   }
+    // }
     stage('Building New Image') {
       steps {
         powershell 'docker build -t flask-project .'
