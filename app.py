@@ -15,11 +15,11 @@ def index():
     category = ''
     price = ''
     total = ''
-    pythoncom.CoInitialize()
-    print('EXCEL')
-    excel = win32com.client.Dispatch("Excel.Application")
-    excel.Visible = True
-    wb_data = excel.Workbooks.Open(r'D:\Dados\DOCUMENTOS\\Cursos\\RepositorioGit\\flask-project\\teste.xlsx')
+    # pythoncom.CoInitialize()
+    # print('EXCEL')
+    # excel = win32com.client.Dispatch("Excel.Application")
+    # excel.Visible = True
+    # wb_data = excel.Workbooks.Open(r'D:\Dados\DOCUMENTOS\\Cursos\\RepositorioGit\\flask-project\\teste.xlsx')
     # excel.Application.Quit()
     return render_template('index.html', code=code, title=title, category=category, price= price, total=total)
 
