@@ -1,18 +1,22 @@
 pipeline {
   agent any
   stages {
-    // stage('Stopping Docker Container') {
-    //   steps {
-    //     powershell 'docker stop flask-project'
-    //   }
-    // }
+    stage('Stopping Docker Container') {
+      steps {
+        powershell 'docker stop flask-project'
+      }
+    }
     stage('Removing Docker Container') {
       steps {
-        // powershell 'docker rm flask-project'
+        powershell 'docker rm flask-project'
+      }
+    }
+    stage('Installing Python 3.8') {
+      steps {        
         powershell 'docker pull python:3.8'
       }
     }
-    stage('Removing Docker Image') {
+    stage('Installing pywin32') {
       steps {
         powershell 'pip install pywin32'
       }
