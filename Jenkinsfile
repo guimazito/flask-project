@@ -14,7 +14,7 @@ pipeline {
     }
     stage('Removing Docker Image') {
       steps {
-        powershell 'docker run -it --rm python:3.8'
+        powershell 'pip install pywin32'
       }
     }
     stage('Building New Image') {
