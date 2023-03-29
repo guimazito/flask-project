@@ -21,6 +21,11 @@ pipeline {
         powershell 'pip install pywin32'
       }
     }
+    stage('Installing pypiwin32') {
+      steps {
+        powershell 'pip install pypiwin32'
+      }
+    }
     stage('Building New Image') {
       steps {
         powershell 'docker build -t flask-project .'

@@ -20,14 +20,8 @@ def index():
     excel = win32.gencache.EnsureDispatch('Excel.Application')
     excel.Visible = True
     wb_data = excel.Workbooks.Open(r'D:\Dados\DOCUMENTOS\\Cursos\\RepositorioGit\\flask-project\\teste.xlsx')
-    # _ = input("Press ENTER to quit:")
     # excel.Application.Quit()
     return render_template('index.html', code=code, title=title, category=category, price= price, total=total)
-
-@app.route('/', methods=['GET'])
-def get():
-    print('AQUI')
-    
 
 # @app.route('/search_ad', methods=['POST'])
 @app.route('/', methods=['POST'])
