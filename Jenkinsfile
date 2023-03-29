@@ -6,16 +6,17 @@ pipeline {
     //     powershell 'docker stop flask-project'
     //   }
     // }
-    // stage('Removing Docker Container') {
-    //   steps {
-    //     powershell 'docker rm flask-project'
-    //   }
-    // }
-    // stage('Removing Docker Image') {
-    //   steps {
-    //     powershell 'docker rmi flask-project'
-    //   }
-    // }
+    stage('Removing Docker Container') {
+      steps {
+        // powershell 'docker rm flask-project'
+        powershell 'docker pull python:3.8'
+      }
+    }
+    stage('Removing Docker Image') {
+      steps {
+        powershell 'docker run -it --rm python:3.8'
+      }
+    }
     stage('Building New Image') {
       steps {
         powershell 'docker build -t flask-project .'
