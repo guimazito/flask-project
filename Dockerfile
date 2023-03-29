@@ -6,6 +6,7 @@ COPY . /app
 
 RUN pip install Flask
 # RUN pip install pywin32
+RUN pip install pythoncom
 
 CMD flask run --host 0.0.0.0
 
