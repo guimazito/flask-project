@@ -2,7 +2,7 @@ import time
 import random
 # from waitress import serve
 from flask import Flask, render_template, request
-import win32com.client as win32
+import win32com.client
 import pythoncom
 
 app = Flask(__name__)
@@ -17,7 +17,7 @@ def index():
     total = ''
     pythoncom.CoInitialize()
     print('EXCEL')
-    excel = win32.gencache.EnsureDispatch('Excel.Application')
+    excel = win32com.client.Dispatch("Excel.Application")
     excel.Visible = True
     wb_data = excel.Workbooks.Open(r'D:\Dados\DOCUMENTOS\\Cursos\\RepositorioGit\\flask-project\\teste.xlsx')
     # excel.Application.Quit()
