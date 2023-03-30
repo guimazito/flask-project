@@ -49,6 +49,6 @@ def search():
         total = random.randint(5, 10)
     return render_template('index.html', code=code, title=title, category=category, price= price, total=total)
 
-# if __name__ == '__main__':
-#     app.run()
+if __name__ == '__main__':
+    app.run()
 #     #serve(app, host='0.0.0.0', port=80)
