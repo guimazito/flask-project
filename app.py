@@ -2,8 +2,6 @@ import time
 import random
 # from waitress import serve
 from flask import Flask, render_template, request
-import win32com.client
-import pythoncom
 
 app = Flask(__name__)
 
