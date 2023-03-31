@@ -1,36 +1,16 @@
 pipeline {
   agent any
   stages {
-    stage('Stopping Docker Container') {
-      steps {
-        powershell 'docker stop flask-project'
-      }
-    }
-    stage('Removing Docker Container') {
-      steps {
-        powershell 'docker rm flask-project'
-      }
-    }
-    stage('Installing Python 3.8') {
-      steps {        
-        powershell 'docker pull python:3.8'
-      }
-    }
-    stage('Installing Windows') {
-      steps {        
-        powershell 'docker pull mcr.microsoft.com/windows/nanoserver:ltsc2022'
-      }
-    }
-    stage('Installing pywin32') {
-      steps {
-        powershell 'pip install pywin32'
-      }
-    }
-    stage('Installing pypiwin32') {
-      steps {
-        powershell 'pip install pypiwin32'
-      }
-    }
+    // stage('Stopping Docker Container') {
+    //   steps {
+    //     powershell 'docker stop flask-project'
+    //   }
+    // }
+    // stage('Removing Docker Container') {
+    //   steps {
+    //     powershell 'docker rm flask-project'
+    //   }
+    // }
     stage('Building New Image') {
       steps {
         powershell 'docker build -t flask-project .'
